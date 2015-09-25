@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ArquiteturaExemplo.Apresentacao.Web.ViewModels.PedidoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAlteracao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCadastro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAlteracao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPedido }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPedido }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPedido }) |
+            @Html.ActionLink("Cancelar", "Cancelar", new { id = item.IdPedido })
+        </td>
+    </tr>
+}
+
+</table>
